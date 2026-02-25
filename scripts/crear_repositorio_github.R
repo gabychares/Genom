@@ -11,5 +11,5 @@ usethis::use_git_config(
   user.email = "gchavez27@alumnos.uaq.mx"
 )
 
-#subir el repositorio al github
+#subir el repositorio al github, esto ya solo se agrega cuando quieres crear un repositorio nuevo, ya solo se corre esto
 usethis::use_github()
