@@ -1,0 +1,8 @@
+install.packages("BiocManager")
+library (BiocManager)
+BiocManager::install ("dada2")
+BiocManager::install ("phyloseq")
+BiocManager::install ("microbiome")
+library ("dada2")
+library ("phyloseq")
+library("microbiome")
