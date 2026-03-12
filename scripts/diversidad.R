@@ -28,3 +28,13 @@ inS <- function (abundancias){
   1/smp(abundancias)
   }
 inS(c(990,10))
+
+#Función para que a partir de un vector con las abundancias te cree una rank-abundances
+rankabundances <- function(x){
+  sort(x, decreasing = T) -> ranking
+  plot(ranking)
+}
+rk <- c(300,50,10,1,200,60,80,700,150,24,0,25)
+rankabundances(rk)
+y <- rep (1,200)
+rankabundances(y)
