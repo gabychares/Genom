@@ -27,4 +27,10 @@ popularidad <- function(nombre){
     diameter(g)
     #¿Cuál es el promedio de la distancia?
 mean_distance(g)    
+
+transitivity(g,"local")
+
+
+
+
     

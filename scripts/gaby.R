@@ -173,7 +173,7 @@ plot(EJ3)
 
 #EJERCICIOS PROPUESTOS
 #Crea una red estrella de 15 nodos. Calcula su grado (degree) máximo y mínimo. ¿Cuál es la densidad de conexiones (edge_density())?
-Ej1 <- make_star (n=15)
+Ej1 <- make_star (n=30)
 plot(Ej1,
      vertex.color ="hotpink")                  
 degree(Ej1)
@@ -189,3 +189,31 @@ Actores <- c("Alfredo Dosal", "Bryan Craston", "Gael García Bernal", "Diego Lun
 KBnumber <- c(2,2,3,3,2)
 tabla <-cbind(Columnas,Actores,KBnumber)
  
+
+#EJERCICIO 1
+anillo <- make_ring(n=30)
+plot(anillo)
+estrella <- make_star(n=30)
+grafo <- make_full_graph(n=30)
+plot(grafo)
+a<-mean_distance(anillo)
+e<- mean_distance(estrella) 
+plot(estrella)
+mg<- mean_distance(grafo)
+media <- c(a,e,mg)
+names<- c("anillo", "estrella", "grafo")
+mea
+
+tabla <- cbind(names, media)
+as.data.frame(tabla)
+graficobarras <- ggplot(tabla, aes(x=media)) + 
+  geom_bar(aes(fill = names))###TERMINAR ESTA GRÁFICA
+graficobarras
+#Coeficiente de clusterización
+#Este determina si las conexiones de un nodo tambien están conectadas, por ejemplo, si tus amigos, también son amigos entre sí
+
+transitivity(anillo, "local" )
+transitivity(estrella)
+transitivity(grafo, "local")         
+
+         
