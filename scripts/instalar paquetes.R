@@ -22,3 +22,5 @@ library(phyloseq)
 
 install.packages("networkD3")
 install.packages("visNetwork")
+
+install.packages("igraphdata")
