@@ -30,7 +30,25 @@ mean_distance(g)
 
 transitivity(g,"local")
 
+#Red interactiva:
 
+library(networkD3)  
+
+wc <- cluster_walktrap(g)
+members <- membership(wc)
+
+# Convert to object suitable for networkD3
+g_d3 <- igraph_to_networkD3(g, group = members)
+
+# Create force directed network plot
+forceNetwork(Links = g_d3$links, Nodes = g_d3$nodes,
+             Source = 'source', Target = 'target',
+             NodeID = 'name', Group = 'group')  
+
+library(visNetwork)
+visIgraph(g) %>%
+  visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE) %>%
+  visInteraction(navigationButtons = TRUE)
 
 
     

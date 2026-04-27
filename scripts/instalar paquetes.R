@@ -19,3 +19,6 @@ library(dada2)
 BiocManager::install("phyloseq")
 BiocManager::install("microbiome")
 library(phyloseq)
+
+install.packages("networkD3")
+install.packages("visNetwork")
