@@ -50,5 +50,21 @@ visIgraph(g) %>%
   visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE) %>%
   visInteraction(navigationButtons = TRUE)
 
+#Medir robustez:
+mean_distance(g, directed = T)
+diameter(g,directed = T)
+delete_vertices(g, "GABY") -> g_sin_gaby
+plot(g_sin_gaby)
+mean_distance(g_sin_gaby)
+sort(degree(g,mode = "out"))
+sort(degree(g,mode = "in"))
 
-    
+#Quitando a los hubs 
+hubs<- delete_vertices(g,c("CESAR","MARIANA","MAYRA"))
+mean_distance(hubs)
+
+#Quitar los que tengan menos degree
+mdg <- delete_vertices(g,c("DIEGO","FERNANDA","SAMUEL","ALONSO","JOSUE"))
+mean_distance(mdg)
+
+
